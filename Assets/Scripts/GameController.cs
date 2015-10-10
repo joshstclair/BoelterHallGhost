@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void startGame(){
-		Application.LoadLevel ("Hallway");
+		Application.LoadLevel ("mainScene");
 	}
 
 	private void reStartGame(){	
