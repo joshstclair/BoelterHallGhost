@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class OpenableDoor : MonoBehaviour {
-	public int doorOpenAngle = 90;
+	public int doorOpenAngle = -90;
 	public bool playerEnter, doorOpen;
 	public float openSpeed = 2;
 	public Vector3 closedRotation, openRotation;
