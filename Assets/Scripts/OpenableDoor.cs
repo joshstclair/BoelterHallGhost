@@ -7,11 +7,12 @@ public class OpenableDoor : MonoBehaviour {
 	public float openSpeed = 2;
 	public Vector3 closedRotation, openRotation;
 
-	public AudioClip doorCreak;
+	public AudioClip doorCreak1;
+	public AudioClip doorCreak2;
 
 	private AudioSource source;
 	private float volLowRange = .5f;
-	private float volHighRangs = 1.0f;
+	private float volHighRange = 1.0f;
 
 	void Start () {
 		// Obtains the default x, y, z rotational values for a closed door
@@ -36,7 +37,13 @@ public class OpenableDoor : MonoBehaviour {
 		// Toggle door state if user is within the collision box
 		if (Input.GetKeyDown (KeyCode.E) && playerEnter) {
 			doorOpen = !doorOpen;
-			source.PlayOneShot(doorCreak, 1F);
+			float vol = Random.Range(volLowRange, volHighRange);
+			int doorSoundSelect = Random.Range(1, 3);
+			if (doorSoundSelect == 1)
+				source.PlayOneShot(doorCreak1, vol);
+			else 
+				source.PlayOneShot(doorCreak2, vol);
+
 		}
 
 	}
