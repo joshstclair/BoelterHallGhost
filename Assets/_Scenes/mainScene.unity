@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 114259614}
   - 108: {fileID: 114259615}
+  - 114: {fileID: 114259616}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -157,9 +158,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: .824999988, a: 1}
   m_Intensity: 8
-  m_Range: 8
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -180,6 +181,18 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &114259616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114259613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d771c812bbc17439bbd8573574a1124f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashingLight: {fileID: 114259615}
 --- !u!1001 &165841307
 Prefab:
   m_ObjectHideFlags: 0
