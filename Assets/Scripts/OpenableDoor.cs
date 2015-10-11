@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class OpenableDoor : MonoBehaviour {
 	public int doorOpenAngle = -90;
@@ -11,8 +12,15 @@ public class OpenableDoor : MonoBehaviour {
 	public AudioClip doorCreak2;
 
 	private AudioSource source;
-	private float volLowRange = .5f;
-	private float volHighRange = 1.0f;
+	private float m_volLowRange = .5f;
+	private float m_volHighRange = 1.0f;
+	
+	public AudioMixerSnapshot normal;
+	public AudioMixerSnapshot scared;
+
+	private float m_TransitionIn;
+	private float m_TransitionOut;
+	private float m_QuarterNote;
 
 	void Start () {
 		// Obtains the default x, y, z rotational values for a closed door
@@ -21,6 +29,10 @@ public class OpenableDoor : MonoBehaviour {
 		openRotation = new Vector3 (closedRotation.x, closedRotation.y + doorOpenAngle, closedRotation.z);
 
 		source = GetComponent<AudioSource>(); 
+
+		m_QuarterNote = .5f;
+		m_TransitionIn = m_QuarterNote;
+		m_TransitionOut = m_QuarterNote * 32;
 	}
 	
 	// Update is called once per frame
@@ -37,7 +49,7 @@ public class OpenableDoor : MonoBehaviour {
 		// Toggle door state if user is within the collision box
 		if (Input.GetKeyDown (KeyCode.E) && playerEnter) {
 			doorOpen = !doorOpen;
-			float vol = Random.Range(volLowRange, volHighRange);
+			float vol = Random.Range(m_volLowRange, m_volHighRange);
 			int doorSoundSelect = Random.Range(1, 3);
 			if (doorSoundSelect == 1)
 				source.PlayOneShot(doorCreak1, vol);
@@ -51,13 +63,20 @@ public class OpenableDoor : MonoBehaviour {
 	
 	// Toggle entry flag when user within close proximity of the door
 	void OnTriggerEnter(Collider player) {
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player") {
 			playerEnter = true;
+			scared.TransitionTo(m_TransitionIn);
+
+		}
 	}
 	
 	void OnTriggerExit(Collider player) {
 		if (player.gameObject.tag == "Player") 
+		{
 			playerEnter = false;
+			normal.TransitionTo(m_TransitionOut); 
+		}
+
 	}
 	
 }

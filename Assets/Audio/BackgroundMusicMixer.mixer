@@ -9,8 +9,11 @@ AudioMixerController:
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300001}
   m_Snapshots:
+  - {fileID: 24533878}
+  - {fileID: 24570576}
   - {fileID: 24500003}
-  m_StartSnapshot: {fileID: 24500003}
+  - {fileID: 24533208}
+  m_StartSnapshot: {fileID: 24533878}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_ExposedParameters: []
@@ -24,7 +27,7 @@ AudioMixerController:
     - 17b93b127ee9c468b85c291344db120a
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500003}
+  m_TargetSnapshot: {fileID: 24570576}
 --- !u!243 &24300001
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -215,8 +218,53 @@ AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: PostJumpscare2nd
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 2c3735a1dd7fd47d8b67f0c6880185ab
-  m_FloatValues: {}
+  m_FloatValues:
+    ff7f3bd4d6e37489f88397931acbb04d: .0255785137
+    3fd0ea86c7d9a4837aeb095c66fe6eda: -80
+    0021efe83e1b9486a8a274e2d11fb5fa: -10.3452072
+    b1c4a23972abe4f70831adf2375ebdf1: -80
+  m_TransitionOverrides: {}
+--- !u!245 &24533208
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PostJumpscare3rd
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: f9da903f63c3f486dae20b8b4ad651f8
+  m_FloatValues:
+    ff7f3bd4d6e37489f88397931acbb04d: -80
+    3fd0ea86c7d9a4837aeb095c66fe6eda: -.00244187191
+    0021efe83e1b9486a8a274e2d11fb5fa: -9.83328629
+    b1c4a23972abe4f70831adf2375ebdf1: -80
+  m_TransitionOverrides: {}
+--- !u!245 &24533878
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Normal
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 648cfee0197644ed6a976e155f91273e
+  m_FloatValues:
+    ff7f3bd4d6e37489f88397931acbb04d: -80
+    3fd0ea86c7d9a4837aeb095c66fe6eda: -80
+    b1c4a23972abe4f70831adf2375ebdf1: -80
+    52146ae98cbd64f41a4241e03648c60d: -80
+  m_TransitionOverrides: {}
+--- !u!245 &24570576
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PostJumpscare1st
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: c22978feab0224826bd51735e9449a0d
+  m_FloatValues:
+    ff7f3bd4d6e37489f88397931acbb04d: -80
+    3fd0ea86c7d9a4837aeb095c66fe6eda: -80
+    0021efe83e1b9486a8a274e2d11fb5fa: -9.83328629
   m_TransitionOverrides: {}
