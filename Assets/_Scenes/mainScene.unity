@@ -224,6 +224,81 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286344367}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &433913528 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 4cee08c7276bf274d91d84489cdf46de, type: 3}
+  m_PrefabInternal: {fileID: 593199766}
+--- !u!82 &433913531
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433913528}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24320080, guid: b2284d8e5c27049ba9c0ece8036aedf7,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7f96d5de761264c1e9dcbb864d3cfbd9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &452628601
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +815,7 @@ MonoBehaviour:
   openSpeed: 2
   closedRotation: {x: 0, y: 0, z: 0}
   openRotation: {x: 0, y: 0, z: 0}
+  doorCreak: {fileID: 0}
 --- !u!65 &1685978285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1027,7 +1103,8 @@ AudioSource:
   m_GameObject: {fileID: 1992861970}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24320080, guid: b2284d8e5c27049ba9c0ece8036aedf7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 526549cc7288643a284927df0cbc9a67, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
