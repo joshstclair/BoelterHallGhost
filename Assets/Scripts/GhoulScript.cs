@@ -4,9 +4,9 @@ using UnityEngine.Audio;
 
 public class GhoulScript : MonoBehaviour {
 
-	private AudioSource source;
+	public AudioSource source;
 
-	private AudioClip monsterScare;
+	public AudioClip monsterScare;
 
 	void Start () {
 		//grab the camera to know the position of x and y and z
@@ -20,7 +20,7 @@ public class GhoulScript : MonoBehaviour {
 		Vector3 temp= Camera.main.transform.position + Camera.main.transform.forward * 2;
 		Vector3 temp2 = new Vector3 (temp.x, temp.y - 2, temp.z);
 		transform.position = temp2;
-
+		source.PlayOneShot (monsterScare, 1F);
 
 	}
 }
