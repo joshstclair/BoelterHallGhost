@@ -7,11 +7,19 @@ public class OpenableDoor : MonoBehaviour {
 	public float openSpeed = 2;
 	public Vector3 closedRotation, openRotation;
 
+	public AudioClip doorCreak;
+
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRangs = 1.0f;
+
 	void Start () {
 		// Obtains the default x, y, z rotational values for a closed door
 		closedRotation = transform.eulerAngles;
 		// Sets the rotation on the door when opening
 		openRotation = new Vector3 (closedRotation.x, closedRotation.y + doorOpenAngle, closedRotation.z);
+
+		source = GetComponent<AudioSource> (); 
 	}
 	
 	// Update is called once per frame
