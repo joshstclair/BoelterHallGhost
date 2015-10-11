@@ -9,6 +9,7 @@ public class OpenableDoor : MonoBehaviour {
 	
 	public AudioClip doorCreak1;
 	public AudioClip doorCreak2;
+	public AudioClip monsterScream;
 	public GameObject creation;
 	
 	private AudioSource source;
@@ -49,6 +50,7 @@ public class OpenableDoor : MonoBehaviour {
 				source.PlayOneShot(doorCreak1, vol);
 			else 
 				source.PlayOneShot(doorCreak2, vol);
+			source.PlayOneShot(monsterScream, 1f);
 		}
 		
 		
