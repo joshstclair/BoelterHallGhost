@@ -19,7 +19,7 @@ public class OpenableDoor : MonoBehaviour {
 		// Sets the rotation on the door when opening
 		openRotation = new Vector3 (closedRotation.x, closedRotation.y + doorOpenAngle, closedRotation.z);
 
-		source = GetComponent<AudioSource> (); 
+		source = GetComponent<AudioSource>(); 
 	}
 	
 	// Update is called once per frame
@@ -27,14 +27,18 @@ public class OpenableDoor : MonoBehaviour {
 		// If the door flag is true, open the door
 		if (doorOpen) {
 			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, openRotation, Time.deltaTime * openSpeed);
+		
 		} 
 		// If the door flag is false, close the door
 		else {
 			transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, closedRotation, Time.deltaTime * openSpeed);
 		}
 		// Toggle door state if user is within the collision box
-		if (Input.GetKeyDown (KeyCode.E) && playerEnter) 
+		if (Input.GetKeyDown (KeyCode.E) && playerEnter) {
 			doorOpen = !doorOpen;
+			source.PlayOneShot(doorCreak, 1F);
+		}
+
 	}
 	
 	
